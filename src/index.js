@@ -4,13 +4,13 @@ import axios from 'axios';
 
 const Root = () => {
   let [message, setMessage] = useState('no good');
-  useEffect(() => getMessage(), []);
-
-  async function getMessage() {
-    const text = await axios.get('/message');
-    setMessage(text.data.text);
-    console.log(text.data.text);
-  }
+  useEffect(() => {
+    async function getMessage() {
+      const text = await axios.get('/message');
+      setMessage(text.data.text);
+    }
+    getMessage();
+  }, []);
 
   return <h1>{message}</h1>;
 };
