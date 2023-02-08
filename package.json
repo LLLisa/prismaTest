@@ -8,7 +8,8 @@
     "build": "webpack ./src",
     "build:dev": "npm run build -- --watch --mode=development",
     "start": "node server",
-    "start:dev": "npm run build:dev & nodemon server"
+    "start:dev": "npm run build:dev & nodemon server",
+    "seed":"node ./db/seed & exit 0"
   },
   "keywords": [],
   "author": "Lisa Knox",
@@ -20,6 +21,7 @@
     "sequelize": "^6.25.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.12",
     "@babel/preset-react": "^7.18.6",
     "babel-loader": "^9.1.0",
     "nodemon": "^2.0.20",
